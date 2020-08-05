@@ -17,7 +17,7 @@ class User
     std::string phone;
     time_t created_at;
 
-    User();
+    User(std::string firstname, std::string lastname, std::string username, std::string email, std::string phone, std::string password);
 
     ~User();
 
