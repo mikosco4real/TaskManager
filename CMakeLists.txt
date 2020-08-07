@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.10)
 
 # Set Variables
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+endif()
 
 # Give the Project name which is also the output file name
 project(TaskManager)
@@ -16,4 +19,8 @@ include_directories(${PROJECT_SOURCE_DIR}/header)
 add_executable(
     TaskManager
     src/main.cpp
+    src/main.cpp
+    src/users.cpp
+    src/Password.cpp
+    src/FieldsValidator.cpp
     )
