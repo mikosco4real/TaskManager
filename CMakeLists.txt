@@ -16,4 +16,5 @@ include_directories(${PROJECT_SOURCE_DIR}/header)
 add_executable(
     TaskManager
     src/main.cpp
+    src/model.cpp
     )

@@ -3,10 +3,11 @@
 #include <iostream>
 #include <ctime>
 
-class User
+class User 
 {
     private:
     std::string password;
+    std::string file_name{"users.csv"};
 
     public:
     int id;
@@ -20,5 +21,10 @@ class User
     User(std::string firstname, std::string lastname, std::string username, std::string email, std::string phone, std::string password);
 
     ~User();
+
+    std::string getPassword()
+    {
+        return password;
+    }
 
 };
