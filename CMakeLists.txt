@@ -22,5 +22,4 @@ add_executable(
     src/model.cpp
     src/users.cpp
     src/Password.cpp
-    src/FieldsValidator.cpp
     )
