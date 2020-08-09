@@ -24,6 +24,6 @@ class UserModel : public BaseModel
         std::cout << "UserModel Object Constructed!" << std::endl;
     }
     ~UserModel(){
-        delete this;
+        // TODO: Destructor goes here;
     }
 };
