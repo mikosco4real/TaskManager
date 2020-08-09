@@ -23,5 +23,7 @@ class UserModel : public BaseModel
     UserModel() : BaseModel{"users.csv"}{
         std::cout << "UserModel Object Constructed!" << std::endl;
     }
-    ~UserModel();
+    ~UserModel(){
+        delete this;
+    }
 };
