@@ -16,7 +16,7 @@ User::User(std::string aFirstName, std::string aLastName,
 
 
 User::~User()
-{	
+{
 	firstName.clear();
 	lastName.clear();
 	username.clear();
@@ -29,8 +29,8 @@ User::~User()
 
 
 void User::registerUser()
-{	
-
+{
+	
 	//Ask for the name
 	string resName = validatename();
 	firstName = resName;
@@ -58,16 +58,16 @@ void User::registerUser()
 	//Ask for the name
 	string resAddress = validteAddress();
 	address = resAddress;
-	
-	created_at = time(0);
 
+	created_at = time(0);
+	
 	//call model
 	//Read last record to get the Id
 	//int lastId = model:getlastId();
 	//idUs = lastId + 1;
 	//created_at
 	//model::addUser(idUs, firstName, lastName, username, email, password, phone, address, created_at)
-
+	 UserModel user;
 }
 void User::update()
 {

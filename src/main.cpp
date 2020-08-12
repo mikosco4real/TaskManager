@@ -6,9 +6,10 @@
 int main()
 {
     time_t t = time(NULL);
-    User InstanceUs("", "", "", "", "","", "", t);
-    // InstanceUs.registerUser();
-    
+    User InstanceUs("", "", "", "", "", "", "", t);
+    InstanceUs.registerUser();
+
+    /*
     std::cout << "Welcome to my C++ Program" << std::endl;
     // time_t t = time(NULL);
     UserModel user;
@@ -20,11 +21,11 @@ int main()
     user.save(u);
     user.save(u2);
 
-    for(auto x : user.all())
+    for (auto x : user.all())
     {
         if (x.username == "fdayan" && x.password == "p12345") {
-        std::cout << x.username << ", " << x.lastName << ", " << x.firstName << std::endl;
+            std::cout << x.username << ", " << x.lastName << ", " << x.firstName << std::endl;
         }
-    }
+    }*/
     return 0;
 }
