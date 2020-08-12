@@ -21,6 +21,7 @@ using namespace std;
  * Defines all the functions to validate the fields
  * that the user uses
  */
+
 class FieldsValidator {
 public:
     struct UserFields
@@ -57,7 +58,7 @@ public:
             else {
                 isValid = false;
                 cin.clear();
-                cin.ignore(INT_MAX, '\n');
+                // cin.ignore(INT_MAX, '\n');
                 cout << "First name is required. Retry.\n";
             }
         } while (!isValid);
@@ -86,7 +87,7 @@ public:
             else {
                 isValid = false;
                 cin.clear();
-                cin.ignore(INT_MAX, '\n');
+                // cin.ignore(INT_MAX, '\n');
                 cout << "Last name is required. Retry.\n";
             }
         } while (!isValid);
@@ -115,7 +116,7 @@ public:
             else {
                 isValid = false;
                 cin.clear();
-                cin.ignore(INT_MAX, '\n');
+                // cin.ignore(INT_MAX, '\n');
                 cout << "Username is required. Retry.\n";
             }
         } while (!isValid);
@@ -143,7 +144,7 @@ public:
             }
             else {
                 cin.clear();
-                cin.ignore(INT_MAX, '\n');
+                // cin.ignore(INT_MAX, '\n');
                 cout << "Email is required. Retry.\n";
             }
         } while (!isValid);
@@ -197,7 +198,7 @@ public:
             else {
                 isValid = false;
                 cin.clear();
-                cin.ignore(INT_MAX, '\n');
+                // cin.ignore(INT_MAX, '\n');
                 cout << "Phone is required. Retry.\n";
             }
         } while (!isValid);
@@ -225,7 +226,7 @@ public:
             else {
                 isValid = false;
                 cin.clear();
-                cin.ignore(INT_MAX, '\n');
+                // cin.ignore(INT_MAX, '\n');
                 cout << "Address is required. Retry.\n";
             }
         } while (!isValid);

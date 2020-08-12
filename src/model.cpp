@@ -75,7 +75,7 @@ std::vector<std::string> UserModel::users2vector(User obj)
 User UserModel::vector2user(std::vector<std::string>& data)
 {
     std::string user_id{data[0]}, firstname{data[1]}, lastname{data[2]}, username{data[3]}, email{data[4]}, password{data[5]}, phone{data[6]}, address{data[7]}, created_at{data[8]};
-    time_t t = stoi(created_at);
+    time_t t = time(NULL);
     User obj(firstname, lastname, username, email, password, phone, address, t);
     obj.user_id = stoi(user_id);
 

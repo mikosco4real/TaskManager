@@ -91,4 +91,9 @@ class UserModel
     bool update(){
         // TODO:: Create update definition here
     }
+
+    int getLastId(){
+        // TODO:: Return the last id of a saved user.
+        return 1;
+    }
 };
