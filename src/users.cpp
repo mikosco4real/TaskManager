@@ -1,4 +1,5 @@
 #include "users.h"
+#include "model.h"
 // Definitions for User goes here
 
 User::User(std::string aFirstName, std::string aLastName,
