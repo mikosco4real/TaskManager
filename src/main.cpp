@@ -5,6 +5,10 @@
 
 int main()
 {
+    time_t t = time(NULL);
+    User InstanceUs("", "", "", "", "","", "", t);
+    InstanceUs.registerUser();
+    
     std::cout << "Welcome to my C++ Program" << std::endl;
     time_t t = time(NULL);
     UserModel user;

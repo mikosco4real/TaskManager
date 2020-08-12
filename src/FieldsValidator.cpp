@@ -12,7 +12,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <stdio.h>
+//#include <stdio.h>
 #include "Password.cpp"
 using namespace std;
 /**
@@ -149,8 +149,7 @@ public:
         } while (!isValid);
 
         return cust.email;
-    }    src/main.cpp
-
+    }
 
     /**
       * FieldsValidator::validatePassword
