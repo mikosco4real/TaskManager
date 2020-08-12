@@ -1,11 +1,21 @@
 #include <iostream>
 #include "model.h"
+#include <vector>
+#include <algorithm>
 
 int main()
 {
+    std::cout << "Welcome to my C++ Program" << std::endl;
+    time_t t = time(NULL);
+    UserModel user;
+    User u("Michael", "Okolo", "mokolo", "mokolo@example.com", "p12345", "0123456789", "Ultimo Torrens University", t);
+    u.user_id = 1;
 
-    std::cout << "TaskManager Main Application" << std::endl;
+    user.save(u);
 
-    UserModel user1;
+    for(auto x : user.all())
+    {
+        std::cout << x.created_at << ", " << x.lastName << ", " << x.firstName << std::endl;
+    }
     return 0;
 }
