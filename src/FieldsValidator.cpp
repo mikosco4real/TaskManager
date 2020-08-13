@@ -1,7 +1,7 @@
 /**
  * @file FieldsValidator.cpp
  *
- * @brief This file has the validation of each of the 
+ * @brief This file has the validation of each of the
  * fields that the application manages
  *
  * @author Fernando Quiros
@@ -12,7 +12,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-//#include <stdio.h>
+ //#include <stdio.h>
 #include "Password.cpp"
 using namespace std;
 /**
@@ -35,7 +35,7 @@ public:
         string address;
 
     };
-    
+
 
     /**
       * FieldsValidator::validatename
@@ -44,12 +44,12 @@ public:
       *
       * @return string value of the name
       */
-    string validatename() {
+    string validatename(string newvalue) {
         UserFields cust;
         bool isValid;
         do {
             cin.clear();
-            cout << "Please enter First Name: ";
+            cout << "Please enter " + newvalue + " First Name: ";
             cin >> cust.firstname;
             //Verifiy that First name is not empty
             if (cust.firstname.length() > 2) {
@@ -65,7 +65,7 @@ public:
 
         return cust.firstname;
     }
-    
+
 
     /**
       * FieldsValidator::validteLastname
@@ -74,11 +74,11 @@ public:
       *
       * @return string value of the last name
       */
-    string validteLastname() {
+    string validteLastname(string newvalue) {
         UserFields cust;
         bool isValid = true;
         do {
-            cout << "Please enter Last Name: ";
+            cout << "Please enter " + newvalue + " Last Name: ";
             cin >> cust.lastname;
             //Verifiy that Last Name is not empty
             if (cust.lastname.length() > 0) {
@@ -103,11 +103,11 @@ public:
       *
       * @return string value of the username
       */
-    string validteUsername() {
+    string validteUsername(string newvalue) {
         UserFields cust;
         bool isValid = true;
         do {
-            cout << "Please enter Username: ";
+            cout << "Please enter " + newvalue + " Username: ";
             cin >> cust.username;
             //Verifiy that username is not empty
             if (cust.username.length() > 0) {
@@ -130,12 +130,12 @@ public:
       *
       * @return string value of the email
       */
-    string validateEmail() {
+    string validateEmail(string newvalue) {
         UserFields cust;
         bool isValid = true;
         do {
             isValid = false;
-            cout << "Enter Email: ";
+            cout << "Enter " + newvalue + " Email: ";
             cin >> cust.email;
             //Verifiy that year is numeric
             cin.ignore(1);
@@ -172,12 +172,12 @@ public:
                 ps.ShowStatus();
             }
         } while (!ps.IsTotalyValid());
-     
+
         return cust.passvalue;
     }
 
-    
-    
+
+
     /**
       * FieldsValidator::validtePhone
       * The function validates that the phone has the right lengh
@@ -185,11 +185,11 @@ public:
       *
       * @return string value of the phone
       */
-    string validtePhone() {
+    string validtePhone(string newvalue) {
         UserFields cust;
         bool isValid = true;
         do {
-            cout << "Please enter phone: ";
+            cout << "Please enter " + newvalue + " phone: ";
             cin >> cust.phone;
             //Verifiy that phone is not empty
             if (cust.phone.length() > 0) {
@@ -213,11 +213,11 @@ public:
       *
       * @return string value of the address
       */
-    string validteAddress() {
+    string validteAddress(string newvalue) {
         UserFields cust;
         bool isValid = true;
         do {
-            cout << "Please enter Address: ";
+            cout << "Please enter " + newvalue + " Address: ";
             cin >> cust.address;
             //Verifiy that address is not empty
             if (cust.address.length() > 0) {
