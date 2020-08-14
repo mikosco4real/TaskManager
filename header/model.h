@@ -85,15 +85,21 @@ class UserModel
             User obj = vector2user(x);
             u.push_back(obj);
         }
+
+        std::sort(u.begin(), u.end(), [](User a, User b)
+        {
+            return a.user_id < b.user_id;
+        });
         return u;
     }
 
     bool update(){
         // TODO:: Create update definition here
+        return true;
     }
 
     int getLastId(){
         // TODO:: Return the last id of a saved user.
-        return 1;
+        return all().back().user_id;
     }
 };
