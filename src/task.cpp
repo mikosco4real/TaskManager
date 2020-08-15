@@ -7,7 +7,7 @@
 std::string task_name;
 std::string assigned_to;
 std::string created_by;
-std::string created_at;
+time_t created_at;
 std::string due_date;
 std::string status;
 */
