@@ -8,7 +8,7 @@ int id_task;
 std::string task_name;
 int assigned_to;
 std::string created_by;
-std::string created_at;
+time_t created_at;
 std::string due_date;
 std::string status;
 
@@ -18,7 +18,7 @@ void createTask(){
     std::cout << "Please insert the task name\n";
     std::cin >> task_name; // limit quantity of characters?
     created_by = User.firstName;
-    created_at = time_t;
+    created_at = time(0);
 }
 
 void completeTask(){
