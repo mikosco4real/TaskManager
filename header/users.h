@@ -29,9 +29,6 @@ public:
     std::string phone;
     std::string address;
     time_t created_at;
-    //to search data
-    //to search data
-    std::string strArray[8] = { "user_id", "firstName", "lastName", "username", "email", "password","phone", "address" };
 
     User(std::string afirstName, std::string alastName,
         std::string ausername, std::string aemail, std::string apassword,
