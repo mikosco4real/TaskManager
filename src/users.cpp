@@ -1,5 +1,6 @@
 #include "users.h"
 #include "model.h"
+
 // Definitions for User goes here
 
 User::User(std::string aFirstName, std::string aLastName,
@@ -60,7 +61,6 @@ int User::registerUser()
 	address = resAddress;
 
 	created_at = time(0);
-	
 	//validates that username does not exists
 	unordered_map<string, string> mappinguser = getUserInfo(1);
 	if (mappinguser["found"] == "1") {
@@ -229,7 +229,6 @@ unordered_map<string, string> User::getUserInfo(int typeofSearch)
 		for (auto x : user.all())
 		{
 			if (x.username == username && x.password == password) {
-				//std::cout << x.username << ", " << x.lastName << ", " << x.firstName << std::endl;
 				mapping["found"] = "1";
 				mapping["usersId"] = x.user_id;
 				mapping["firstname"] = x.firstName;
@@ -264,4 +263,56 @@ void User::updatePassword()
 	//username or email as key to identify the user
 	//model::updatePassword(email, newpassword)
 
+}
+
+/**
+* convertDateToString
+* 
+* @param time_t time_creation unix time
+*
+* @return string str date in format dd-mm-yy hh:mm:ss 
+**/
+string FormatUserDate::convertDateToString(time_t time_creation) {
+	
+	time_t rawtime = time_creation;
+	struct tm* timeinfo;
+	char buffer[80];
+
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+
+	strftime(buffer, sizeof(buffer), "%d-%m-%Y %H:%M:%S", timeinfo);
+	std::string str(buffer);
+	
+	return str;
+}
+
+
+/**
+* convertStringDateToTime_t
+*
+* @param string time_creation date in format dd-mm-yy hh:mm:ss
+*
+* @return time_t tStart date in unix format
+**/
+time_t FormatUserDate::convertStringDateToTime_t(string time_creation) {
+	std::string startTime = time_creation;
+
+	time_t tStart;
+	int yy, month, dd, hh, mm, ss;
+	struct tm whenStart;
+	const char* zStart = startTime.c_str();
+
+	sscanf(zStart, "%d-%d-%d %d:%d:%d", &dd, &month, &yy, &hh, &mm, &ss);
+	whenStart.tm_year = yy - 1900;
+	whenStart.tm_mon = month - 1;
+	whenStart.tm_mday = dd;
+	whenStart.tm_hour = hh;
+	whenStart.tm_min = mm;
+	whenStart.tm_sec = ss;
+	whenStart.tm_isdst = -1;
+
+	tStart = mktime(&whenStart);
+
+	return tStart;
 }

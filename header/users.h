@@ -1,10 +1,9 @@
 #ifndef USERS_H
 #define USERS_H
-
+#pragma warning(disable : 4996)
 #pragma once
-#include "../src/FieldsValidator.cpp"
-//#include "FieldsValidator.cpp"
-
+//#include "../src/FieldsValidator.cpp"
+#include "FieldsValidator.cpp"
 
 #include <iostream>
 #include <ctime>
@@ -12,6 +11,9 @@
 #include <vector>
 #include <iomanip> 
 #include <unordered_map>
+#include <stdio.h>      /* puts */
+#include <time.h>       /* time_t, struct tm, time, localtime, strftime */
+
 
 class User : public FieldsValidator
 {
@@ -43,6 +45,13 @@ public:
     bool processUpdating(std::unordered_map<string, string>& mapping);
     void resetPassword();
     void updatePassword();
+};
+
+
+class FormatUserDate{
+public:
+    string convertDateToString(time_t time_creation);
+    time_t convertStringDateToTime_t(string time_creation);
 };
 
 #endif // !USERS_H
