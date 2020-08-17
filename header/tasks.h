@@ -10,6 +10,7 @@ class Task : public FieldsValidator {
 
 public:
     int id_task;
+    int task_group_id;
     std::string task_name;
     std::string assigned_to;
     std::string due_date;

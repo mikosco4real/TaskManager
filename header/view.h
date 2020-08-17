@@ -22,4 +22,28 @@ class Session
 class Views
 {
     // Start Working on Views
+    void header();
+    void menu():
+
+    /*
+        login
+        logout
+        register user
+        create taskgroup
+        add users - to task group
+        create tasks
+        assign tasks
+        mark tasks with status - task completed 
+        task status 
+        update user profile
+        leave taskgroup
+        view user info
+        view Taskgroups
+        view Tasks == taskgroup id or name
+
+
+
+
+    */
+
 };

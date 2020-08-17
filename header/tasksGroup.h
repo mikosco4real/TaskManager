@@ -3,6 +3,8 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include "model.h"
+#include "users.h"
 using namespace std;
 
 class TaskGroup {
@@ -13,6 +15,7 @@ public:
     int user_id;
     string name;
     int created_by;
+    std::vector<User> all_users;
 
     TaskGroup();
     ~TaskGroup();
@@ -21,7 +24,11 @@ public:
 
     void leaveGroup();
 
-    void addUser();
+    void addUser(){
+        UserModel user;
+        all_users.push_back(user.all()[7]);
+    };
+    void view_tasks();
 
 };
 

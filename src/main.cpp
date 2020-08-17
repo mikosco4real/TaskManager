@@ -41,9 +41,16 @@ int main()
     }
 
     */
+   Views view;
+   std::string command;
+   views.header();
+   views.menu();
+   std::cout << "Welcome to Task Manager" << std::endl;
+   std::getline(std::cin, command);
 
-    Session s;
-    s.start();
+    while (command != "quit" || command != "q" || command != "QUIT"){
+
+    }
 
     return 0;
 }

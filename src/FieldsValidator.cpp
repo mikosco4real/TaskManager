@@ -164,7 +164,16 @@ public:
         UserFields cust;
         PasswordStatus ps;
         do
-        {
+        {    // time_t t = time(0);
+
+    // cout << "Initial time" << t <<endl;
+    // FormatUserDate objConverter; 
+    // string stringdate = objConverter.convertDateToString(t);
+    // cout << "String time" << stringdate << endl;
+
+
+    // time_t lastTime = objConverter.convertStringDateToTime_t(stringdate);
+    // cout << "time back to time_t format " << lastTime << endl;
             cout << "Please enter " + newpas + " password : ";
             cin >> cust.passvalue;
             ps.checkValidity(cust.passvalue);
