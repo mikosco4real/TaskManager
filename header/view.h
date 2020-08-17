@@ -10,7 +10,6 @@ class Session
     public:
     bool active = false;
     time_t start_time, last_active_time;
-    User u;
     Session() = default;
     void start();
     void end();
@@ -18,16 +17,20 @@ class Session
     bool login();
 };
 
+Session session;
 
 class Views
 {
+    public:
     // Start Working on Views
     void header();
-    void menu():
+    void menu();
+    void router(std::string command);
+    void login();
 
     /*
         login
-        logout
+        logout -- Session u -- u.end()
         register user
         create taskgroup
         add users - to task group

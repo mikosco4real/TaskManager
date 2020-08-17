@@ -43,3 +43,36 @@ bool Session::login()
 
     return user_it != all.end();
 }
+
+
+// Views starts here
+
+void Views::header(){
+    system("cls");
+    std::cout << ":::::::::::::::::::::::::::::::::::::::  Welcome to TaskManager  ::::::::::::::::::::::::::" << std::endl; 
+}
+
+void Views::menu(){
+    std::cout << std::endl;
+    std::cout << "Options" << std::endl;
+    std::cout << "login - provides a page to login to the system" << std::endl;
+    std::cout << "logout - Logs the user out of the system" << std::endl;
+    std::cout << "Quit - To terminate the program" << std::endl;
+    std::cout << std::endl;
+}
+
+void Views::router(std::string command){
+    if(command == "login"){
+        login();
+    }
+    else if (command == "logout"){
+        // TODO:: Log the user out
+    }
+    else{
+        std::cout << "Invalid Command!!!" << std::endl;
+    }
+}
+
+void Views::login(){
+    session.start();
+}
