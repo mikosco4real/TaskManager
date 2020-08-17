@@ -253,7 +253,7 @@ public:
       * @return string value of the task name
       */
     string validteTaskName(string newvalue) {
-      
+
         string task_name;
 
         bool isValid = true;
@@ -302,8 +302,8 @@ public:
 
         return assignedto;
     }
-    
-   
+
+
     /**
       * FieldsValidator::validateTaskDue
       * The function validates that the due date has the right lengh
@@ -337,7 +337,63 @@ public:
 
     //ADD FIELDS FOR TASK GROUP
 
+    /**
+      * FieldsValidator::validteTaskName
+      * The function validates that the task name has the right lengh
+      * and is not empty
+      *
+      * @return string value of the task name
+      */
+    string validateTaskGroupName(string newvalue) {
 
+        string taskg_name;
+
+        bool isValid = true;
+        do {
+            cout << "Please insert the task group name: ";
+            cin >> taskg_name;
+            //Verifiy that task_name is not empty
+            if (taskg_name.length() > 0) {
+                isValid = true;
+            }
+            else {
+                isValid = false;
+                cin.clear();
+                cout << "Task group name is required. Retry.\n";
+            }
+        } while (!isValid);
+
+        return taskg_name;
+    }
+
+    /**
+      * FieldsValidator::validteTaskName
+      * The function validates that the task name has the right lengh
+      * and is not empty
+      *
+      * @return string value of the task name
+      */
+    string validateusernameforTaskGroup(string newvalue) {
+
+        string taskg_name;
+
+        bool isValid = true;
+        do {
+            cout << "Please add username to the task group : ";
+            cin >> taskg_name;
+            //Verifiy that task_name is not empty
+            if (taskg_name.length() > 0) {
+                isValid = true;
+            }
+            else {
+                isValid = false;
+                cin.clear();
+                cout << "Username is required. Retry.\n";
+            }
+        } while (!isValid);
+
+        return taskg_name;
+    }
 
     //ADD FIELDS FOR TASK GROUP MAP
 
