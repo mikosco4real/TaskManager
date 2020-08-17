@@ -42,14 +42,25 @@ int main()
 
     */
    Views view;
-   std::string command;
-   views.header();
-   views.menu();
-   std::cout << "Welcome to Task Manager" << std::endl;
-   std::getline(std::cin, command);
+   std::string command{};
+   view.header();
+   view.menu();
+//    std::tolower(command);
 
-    while (command != "quit" || command != "q" || command != "QUIT"){
-
+    while (true){
+        std::cout << "Option >> ";
+        std::getline(std::cin, command);
+        std::transform(command.begin(), command.end(), command.begin(), [](unsigned char c){ return std::tolower(c); });
+        
+        if (command == "quit" || command == "q"){
+            // End the program
+            break;
+        }
+        else
+        {
+            view.router(command);
+        }
+        
     }
 
     return 0;
