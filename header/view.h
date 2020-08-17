@@ -17,6 +17,7 @@ class Session
     bool login();
 };
 
+Session session;
 
 class Views
 {

@@ -58,6 +58,15 @@ void Views::menu(){
     std::cout << "Login - Provides a page to login to the system" << std::endl;
     std::cout << "Logout - Logs the user out of the system" << std::endl;
     std::cout << "Register User - Registers a new user in the system" << std::endl;
+    std::cout << "Create TaskGroup - Creates a task group" << std::endl;
+    std::cout << "Add User - Adds a new user to the task group" << std::endl;
+    std::cout << "Create Task - Creates a task" << std::endl;
+    std::cout << "Assign Task - Assigns task to a member of the task group" << endl;
+    std::cout << "Complete Task - Changes the status of the task" << endl;
+    std::cout << "Update Profile - Updates the user profile" << endl;
+    std::cout << "Get User Info - Retrieves user information" << endl;
+    std::cout << "Get TaskGroup - Views information of task group" << endl;
+    std::cout << "View Task - Views available tasks" << endl;
     std::cout << "Quit - To terminate the program" << std::endl;
     std::cout << std::endl;
 }
@@ -84,6 +93,57 @@ void Views::logout(){
     s.end();
 }
 
-void registerUser(){
+void Views::registerUser(){
+    User u;
+    u.registerUser();
+}
 
+void Views::createTaskGroup(){
+    TaskGroup t;
+    t.createTaskGroup();
+}
+
+void Views::addUser(){
+    TaskGroup t;
+    t.addUser();
+}
+
+void Views::createTask(){
+    Task t;
+    t.createTask();
+}
+
+void Views::assignTask(){
+    Task t;
+    t.assignTask();
+}
+
+void Views::completeTask(){
+    Task t;
+    t.completeTask();
+}
+
+void Views::updateProfile(){
+    User u;
+    u.update();
+}
+
+void Views::leaveGroup(){
+    TaskGroup l;
+    l.leaveGroup();
+}
+
+void Views:: getUserInfo(){
+    User u;
+    u.getUserInfo(); //return vector???
+}
+
+void Views::getGroups(){
+    TasksGroupMap t;
+    t.getGroups();
+}
+
+void Views::viewTask(){
+    Task t; //create header for Task.cpp
+    t.viewTask();
 }
