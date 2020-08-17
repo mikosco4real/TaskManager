@@ -2,8 +2,8 @@
 #define USERS_H
 #pragma warning(disable : 4996)
 #pragma once
-//#include "../src/FieldsValidator.cpp"
-#include "FieldsValidator.cpp"
+#include "../src/FieldsValidator.cpp"
+// #include "FieldsValidator.cpp"
 
 #include <iostream>
 #include <ctime>

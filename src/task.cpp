@@ -34,12 +34,12 @@ void createTask(){
     std::cout << "Please insert the task name:\n";
     std::cin >> task[1];
 
-    task[2] = User.firstName;
+    // task[2] = User.firstName;
 
     std::cout << "Please insert the ID of the user whom you wish to assign the task to:\n";
     std::cin >> task[3];
 
-    task[4] = time_t;
+    // task[4] = time_t;
     
 
     std::cout << "Please insert the task due date and time:\n";

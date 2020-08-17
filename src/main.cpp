@@ -7,16 +7,16 @@
 
 int main()
 {
-    time_t t = time(0);
+    // time_t t = time(0);
 
-    cout << "Initial time" << t <<endl;
-    FormatUserDate objConverter; 
-    string stringdate = objConverter.convertDateToString(t);
-    cout << "String time" << stringdate << endl;
+    // cout << "Initial time" << t <<endl;
+    // FormatUserDate objConverter; 
+    // string stringdate = objConverter.convertDateToString(t);
+    // cout << "String time" << stringdate << endl;
 
 
-    time_t lastTime = objConverter.convertStringDateToTime_t(stringdate);
-    cout << "time back to time_t format " << lastTime << endl;
+    // time_t lastTime = objConverter.convertStringDateToTime_t(stringdate);
+    // cout << "time back to time_t format " << lastTime << endl;
 
     
     /*
