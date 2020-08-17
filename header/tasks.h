@@ -4,7 +4,7 @@
 #include <vector>
 #include <ctime>
 #include "../src/FieldsValidator.cpp"
-// #include "FieldsValidator.cpp"
+//#include "FieldsValidator.cpp"
 
 class Task : public FieldsValidator {
 
@@ -17,7 +17,7 @@ public:
     std::string created_by;
     time_t task_created_at;
     std::string status;
-    
+
     std::vector<std::string> task_status{ "assigned", "accepted", "declined", "completed" };
 
     void createTask();

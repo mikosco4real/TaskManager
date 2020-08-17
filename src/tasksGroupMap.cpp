@@ -25,7 +25,7 @@ void TasksGroupMap::getGroups()
 
 void TasksGroupMap::disableMap()
 {
-        
+
 }
 
 

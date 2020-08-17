@@ -1,7 +1,7 @@
 #include "tasks.h"
 
 void Task::createTask() {
-    
+
     validteTaskName("");
     validateAssignedTo(""); //Should validate that the id user or username added exists in the user's file
     validateTaskDue("");
@@ -10,7 +10,7 @@ void Task::createTask() {
 }
 
 void Task::completeTask() {
-  
+
 }
 
 void Task::acceptTask() {

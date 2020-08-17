@@ -7,27 +7,25 @@
 #include "users.h"
 using namespace std;
 
-class TaskGroup {
+#include "../src/FieldsValidator.cpp"
+//#include "FieldsValidator.cpp"
+
+class TaskGroup : public FieldsValidator {
 private:
 public:
 
-    int id_task_group;
-    int user_id;
-    string name;
-    int created_by;
+    int id_task_group = 0;
+    int user_id = 0; //user admin id
+    string name; //name of task group
+    int created_by = 0; 
     std::vector<User> all_users;
 
-    TaskGroup();
+    TaskGroup(int idtaskgroup, int userid, string nameUs,  int createdby);
     ~TaskGroup();
 
     void createTaskGroup();
-
     void leaveGroup();
-
-    void addUser(){
-        UserModel user;
-        all_users.push_back(user.all()[7]);
-    };
+    void addUser(int task_group_id);
     void view_tasks();
 
 };
