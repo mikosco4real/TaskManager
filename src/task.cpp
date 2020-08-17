@@ -28,6 +28,7 @@ task[6] = Status of the task
 std::vector<std::string> task_status{"assigned", "accepted", "declined", "completed"};
 
 void createTask(){
+    //available only if the user is group admin
     id_task++;
     task[0] = id_task;
 
@@ -48,15 +49,60 @@ void createTask(){
     task[6] = task_status[0];
 }
 
+int choice = 0;
+
+do {
+    std::cout << "1. Create task\n";
+    std::cout << "2. Delete task\n";
+    std::cout << "3. Edit task\n";
+    std::cout << "4. Accept task\n";
+    std::cout << "5. Decline task\n";
+    std::cout << "6. Mark task as complete\n";
+
+    switch (menu){
+        case 1:
+            createTask();
+            break;
+        case 2:
+            deleteTask();
+            break;
+        case 3:
+            editTask();
+    }
+    
+    
+    
+    }
+
+void deleteTask(){
+    //available only if the user is group admin
+    id_task = 0;
+    std::cout << "Please insert the number of the task you wish to delete:\n";
+    std::cin >> id_task;
+}
+
+void editTask(){
+    //available only if the user is group admin
+    id_task = 0;
+    std::cout << "Please insert the number of the task you wish to edit:\n";
+    std::cin >> id_task;
+}
+
+void acceptTask(){
+    id_task = 0;
+    std::cout << "Please insert the number of the task you wish to accept:\n";
+    std::cin >> id_task;
+}
+
+void declineTask(){
+    id_task = 0;
+    std::cout << "Please insert the number of the task you wish to decline:\n";
+    std::cin >> id_task;
+}
+
 void completeTask(){
     int task_number;
     std::cout << "Please insert the number of the task you wish to mark as completed:\n";
     std::cin >> task_number;
     task[task_number] = task_status[3];
-}
-
-void acceptTask(){
-}
-
-void approveTask(){
 }
