@@ -49,14 +49,15 @@ bool Session::login()
 
 void Views::header(){
     system("cls");
-    std::cout << ":::::::::::::::::::::::::::::::::::::::  Welcome to TaskManager  ::::::::::::::::::::::::::" << std::endl; 
+    std::cout << "::::::::::::::::::::::: Welcome to TaskManager :::::::::::::::::::::::" << std::endl; 
 }
 
 void Views::menu(){
     std::cout << std::endl;
     std::cout << "Options" << std::endl;
-    std::cout << "login - provides a page to login to the system" << std::endl;
-    std::cout << "logout - Logs the user out of the system" << std::endl;
+    std::cout << "Login - Provides a page to login to the system" << std::endl;
+    std::cout << "Logout - Logs the user out of the system" << std::endl;
+    std::cout << "Register User - Registers a new user in the system" << std::endl;
     std::cout << "Quit - To terminate the program" << std::endl;
     std::cout << std::endl;
 }
@@ -76,4 +77,13 @@ void Views::router(std::string command){
 void Views::login(){
     Session s;
     s.start();
+}
+
+void Views::logout(){
+    Session s;
+    s.end();
+}
+
+void registerUser(){
+
 }
