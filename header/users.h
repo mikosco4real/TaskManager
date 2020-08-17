@@ -29,6 +29,7 @@ public:
     std::string phone;
     std::string address;
     time_t created_at;
+    User() = default;
 
     User() = default;
 

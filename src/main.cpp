@@ -54,7 +54,7 @@ int main()
         
         if (command == "quit" || command == "q"){
             // End the program
-            break;
+            break;                
         }
         else
         {
