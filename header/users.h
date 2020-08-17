@@ -30,6 +30,8 @@ public:
     std::string address;
     time_t created_at;
 
+    User() = default;
+
     User(std::string afirstName, std::string alastName,
         std::string ausername, std::string aemail, std::string apassword,
         std::string aphone, std::string aaddress, time_t created_at);
