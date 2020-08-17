@@ -233,4 +233,106 @@ public:
 
         return cust.address;
     }
+
+    //ADD FIELDS FOR TASK
+
+    /**
+      * FieldsValidator::validteTaskName
+      * The function validates that the task name has the right lengh
+      * and is not empty
+      *
+      * @return string value of the task name
+      */
+    string validteTaskName(string newvalue) {
+      
+        string task_name;
+
+        bool isValid = true;
+        do {
+            cout << "Please insert the task name: ";
+            cin >> task_name;
+            //Verifiy that task_name is not empty
+            if (task_name.length() > 0) {
+                isValid = true;
+            }
+            else {
+                isValid = false;
+                cin.clear();
+                cout << "Task name is required. Retry.\n";
+            }
+        } while (!isValid);
+
+        return task_name;
+    }
+
+    /**
+      * FieldsValidator::validateAssignedTo
+      * The function validates that the id assignedto has the right lengh
+      * and is not empty
+      *
+      * @return string value of the assignedto
+      */
+    string validateAssignedTo(string newvalue) {
+
+        string assignedto;
+
+        bool isValid = true;
+        do {
+            cout << "Please insert the ID of the user whom you wish to assign the task to: ";
+            cin >> assignedto;
+            //Verifiy that id is not empty
+            if (assignedto.length() > 0) {
+                isValid = true;
+            }
+            else {
+                isValid = false;
+                cin.clear();
+                cout << "The field is required. Retry.\n";
+            }
+        } while (!isValid);
+
+        return assignedto;
+    }
+    
+   
+    /**
+      * FieldsValidator::validateTaskDue
+      * The function validates that the due date has the right lengh
+      * and is not empty
+      *
+      * @return string value of the assignedto
+      */
+    string validateTaskDue(string newvalue) {
+
+        string taskduedate;
+
+        bool isValid = true;
+        do {
+            cout << "Please insert the task due date and time (Format DD-MM-YYYY):\n";
+            cin >> taskduedate;
+            //Verifiy that taskduedate is not empty
+            if (taskduedate.length() > 0) {
+                isValid = true;
+            }
+            else {
+                isValid = false;
+                cin.clear();
+                cout << "The field is required. Retry.\n";
+            }
+        } while (!isValid);
+
+        return taskduedate;
+    }
+
+
+
+    //ADD FIELDS FOR TASK GROUP
+
+
+
+    //ADD FIELDS FOR TASK GROUP MAP
+
+
+
+
 };
