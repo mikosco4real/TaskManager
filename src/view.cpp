@@ -74,6 +74,5 @@ void Views::router(std::string command){
 }
 
 void Views::login(){
-    Session s;
-    s.start();
+    session.start();
 }
