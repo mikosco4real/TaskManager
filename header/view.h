@@ -12,7 +12,7 @@ class Session
     void start();
     void end();
     bool status();
-    void login();
+    bool login();
 };
 
 

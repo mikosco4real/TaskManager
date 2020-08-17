@@ -93,13 +93,24 @@ class UserModel
         return u;
     }
 
-    bool update(){
-        // TODO:: Create update definition here
-        return true;
+    bool update(User& obj){
+        // Updates a users record on the file
+        std::vector<User> all_users = all();
+        auto obj_it = std::find_if(all_users.begin(), all_users.end(), [obj] (User u) {
+            return u.user_id == obj.user_id;
+        });
+        if(obj_it == all_users.end()){
+            // Match not found
+        }
+        else{
+            all_users.erase(obj_it);
+            all_users.push_back(obj);
+        }
+        return save_all(all_users);
     }
 
     int getLastId(){
-        // TODO:: Return the last id of a saved user.
+        // Returns the last Id created for a User.
         return all().back().user_id;
     }
 };
