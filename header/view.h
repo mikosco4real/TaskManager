@@ -4,6 +4,9 @@
 #include <vector>
 #include <algorithm>
 #include "users.h"
+#include "tasks.h"
+#include "tasksGroup.h"
+#include "tasksGroupMap.h"
 
 class Session
 {
@@ -17,16 +20,32 @@ class Session
     bool login();
 };
 
-Session session;
 
 class Views
 {
     public:
     // Start Working on Views
+    Session session;
+    User user;
+    Task task;
+    TaskGroup taskgroup;
+    TasksGroupMap taskgroupmap;
     void header();
     void menu();
     void router(std::string command);
     void login();
+    void logout();
+    void registerUser();
+    void createTaskGroup();
+    void addUser();
+    void createTask();
+    void assignTask();
+    void completeTask();
+    void updateProfile();
+    void leaveGroup();
+    void getUserInfo();
+    void getGroups();
+    void viewTask();
 
     /*
         login

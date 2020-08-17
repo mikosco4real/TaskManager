@@ -6,6 +6,9 @@ public:
 	TasksGroupMap();
 	~TasksGroupMap();
 
+
+	void getGroups();
+
 private:
 
 };

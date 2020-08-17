@@ -18,3 +18,6 @@ void Task::acceptTask() {
 
 void Task::approveTask() {
 }
+
+void Task::viewTask(){
+}

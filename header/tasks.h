@@ -27,4 +27,8 @@ public:
     void acceptTask();
 
     void approveTask();
+
+    void assignTask();
+
+    void viewTask();
 };

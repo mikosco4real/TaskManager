@@ -106,3 +106,5 @@ void completeTask(){
     std::cin >> task_number;
     task[task_number] = task_status[3];
 }
+
+void viewTask();
