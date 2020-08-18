@@ -154,7 +154,7 @@ void Views::leaveGroup(){
 }
 
 void Views:: getUserInfo(){
-    user.getUserInfo(); //return vector???
+    //user.getUserInfo(); returns user information
 }
 
 void Views::getGroups(){
