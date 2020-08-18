@@ -82,3 +82,97 @@ User UserModel::vector2user(std::vector<std::string>& data)
     return obj;
 }
 
+
+// IMPLEMENTATIONS FOR TasksGroupMap STARTS HERE
+
+std::vector<std::string> TaskGroupMapModel::data2vector(TasksGroupMap& obj){
+    std::vector<std::string> data;
+
+    data.push_back(std::to_string(obj.id_task_group));
+    data.push_back(std::to_string(obj.id_user));
+    data.push_back(std::to_string(obj.id_task_group_map));
+
+    return data;
+}
+
+
+TasksGroupMap TaskGroupMapModel::vector2data(std::vector<std::string>& obj){
+    TasksGroupMap tgm;
+    tgm.id_task_group = stoi(obj[0]);
+    tgm.id_user = stoi(obj[1]);
+    tgm.id_task_group_map = stoi(obj[2]);
+
+    return tgm;
+}
+
+
+bool TaskGroupMapModel::save(TasksGroupMap& obj){
+    std::vector<std::string> data = data2vector(obj);
+    BaseModel CSV(filename);
+    return CSV.save(data);
+}
+
+
+bool TaskGroupMapModel::save_all(std::vector<TasksGroupMap>& obj){
+    bool flag = false;
+    remove(filename.c_str());
+    for (auto data : obj){
+        flag = save(data);
+    }
+    return flag;
+}
+
+
+std::vector<TasksGroupMap> TaskGroupMapModel::all(){
+    BaseModel CSV(filename);
+    std::vector<std::vector<std::string>> data = CSV.load();
+    std::vector<TasksGroupMap> tgm;
+    
+    for(std::vector<std::string> x : data){
+        TasksGroupMap tgm_instance = vector2data(x);
+        tgm.push_back(tgm_instance);
+    }
+    
+    std::sort(tgm.begin(), tgm.end(), [](TasksGroupMap a, TasksGroupMap b){
+        return a.id_task_group_map < a.id_task_group_map;
+    });
+
+    return tgm;
+}
+
+
+bool TaskGroupMapModel::update(TasksGroupMap& obj){
+    std::vector<TasksGroupMap> dataset = all();
+    auto obj_it = std::find_if(dataset.begin(), dataset.end(), [obj](TasksGroupMap data){
+        return data.id_task_group_map == obj.id_task_group_map;
+    });
+    if (obj_it != dataset.end()){
+        dataset.erase(obj_it);
+        dataset.push_back(obj);
+    }
+    return save_all(dataset);
+}
+
+
+int TaskGroupMapModel::getLastId(){
+    return all().back().id_task_group_map;
+}
+
+
+bool TaskGroupMapModel::deleteData(TasksGroupMap& obj){
+    auto dataset = all();
+    auto obj_it = std::find_if(dataset.begin(), dataset.end(), [obj] (TasksGroupMap a){
+        return obj.id_task_group_map == a.id_task_group_map;
+    });
+
+    if (obj_it == dataset.end()){
+        std::cout << "Object not found" << std::endl;
+        return false;
+    }
+    else
+    {
+        dataset.erase(obj_it);
+        return save_all(dataset);
+    }
+    
+}

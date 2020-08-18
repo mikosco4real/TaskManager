@@ -138,7 +138,7 @@ void Views::createTaskGroup(){
 }
 
 void Views::addUser(){
-    taskgroup.addUser();
+    taskgroup.addUser(1); // Takes a Parameter Task Group ID TODO:: get the id from the user but first show them possible task groups. I will put 1 for now.
 }
 
 void Views::createTask(){
@@ -162,7 +162,7 @@ void Views::leaveGroup(){
 }
 
 void Views:: getUserInfo(){
-    user.getUserInfo(); //return vector???
+    user.getUserInfo(2); // You have to include a search type which could be 1 or 2?
 }
 
 void Views::getGroups(){

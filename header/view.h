@@ -32,6 +32,9 @@ class Views
     Task task;
     TaskGroup taskgroup;
     TasksGroupMap taskgroupmap;
+
+    Views() = default;
+
     void header();
     void menu();
     void router(std::string command);

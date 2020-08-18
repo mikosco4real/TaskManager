@@ -6,6 +6,9 @@
 #include <vector>
 #include <algorithm>
 #include "users.h"
+#include "tasks.h"
+#include "tasksGroup.h"
+#include "tasksGroupMap.h"
 #include <ctime>
 
 class BaseModel
@@ -113,4 +116,22 @@ class UserModel
         // Returns the last Id created for a User.
         return all().back().user_id;
     }
+};
+
+
+class TaskGroupMapModel
+{
+    public:
+    std::string filename = "taskgroupmap.csv";
+
+    // Serializations
+    std::vector<std::string> data2vector(TasksGroupMap& obj);
+    TasksGroupMap vector2data(std::vector<std::string>& obj);
+
+    bool save(TasksGroupMap& obj);
+    bool save_all(std::vector<TasksGroupMap>& obj);
+    std::vector<TasksGroupMap> all();
+    bool update(TasksGroupMap& obj);
+    int getLastId();
+    bool deleteData(TasksGroupMap& obj);
 };
