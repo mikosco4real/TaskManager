@@ -3,6 +3,8 @@
 #include <vector>
 #include <algorithm>
 #include "view.h"
+#include <ios>
+#include <limits>
 
 
 int main()
@@ -48,6 +50,7 @@ int main()
    view.menu();
 
     while (true){
+        // std::cin.ignore(numeric_limits<streamsize>::max(), '\n'); //clear buffer before taking new Inputs
         std::cout << "Option >> ";
         std::getline(std::cin, command);
         std::transform(command.begin(), command.end(), command.begin(), [](unsigned char c){ return std::tolower(c); });

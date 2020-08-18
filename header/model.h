@@ -119,6 +119,7 @@ class UserModel
 };
 
 
+// New Object - Model for Managing TaskGroupMap.
 class TaskGroupMapModel
 {
     public:
@@ -134,4 +135,23 @@ class TaskGroupMapModel
     bool update(TasksGroupMap& obj);
     int getLastId();
     bool deleteData(TasksGroupMap& obj);
+};
+
+
+// New Object - Model for Managing TaskGroup
+class TaskGroupModel
+{
+    public:
+    std::string filename = "taskgroup.csv";
+
+    // Serializations
+    std::vector<std::string> data2vector(TaskGroup& obj);
+    TaskGroup vector2data(std::vector<std::string>& obj);
+
+    bool save(TaskGroup& obj);
+    bool save_all(std::vector<TaskGroup>& obj);
+    std::vector<TaskGroup> all();
+    bool update(TaskGroup& obj);
+    int getLastId();
+    bool deleteData(TaskGroup& obj);
 };
