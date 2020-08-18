@@ -3,7 +3,6 @@
 #include <string>
 #include <fstream>
 #include <vector>
-#include "model.h"
 #include "users.h"
 using namespace std;
 
@@ -19,6 +18,8 @@ public:
     string name; //name of task group
     int created_by = 0; 
     std::vector<User> all_users;
+
+    TaskGroup() = default;
 
     TaskGroup(int idtaskgroup, int userid, string nameUs,  int createdby);
     ~TaskGroup();

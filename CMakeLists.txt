@@ -23,4 +23,7 @@ add_executable(
     src/users.cpp
     src/Password.cpp
     src/view.cpp
+    src/tasks.cpp
+    src/tasksGroup.cpp
+    src/tasksGroupMap.cpp
     )

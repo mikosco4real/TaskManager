@@ -41,11 +41,11 @@ int main()
     }
 
     */
+
    Views view;
    std::string command{};
    view.header();
    view.menu();
-//    std::tolower(command);
 
     while (true){
         std::cout << "Option >> ";

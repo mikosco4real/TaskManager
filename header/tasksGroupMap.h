@@ -18,9 +18,6 @@ public:
 	void getGroups();
 	void disableMap();
 
-
-	void getGroups();
-
 private:
 
 };

@@ -1,5 +1,7 @@
-#include "tasksGroup.h";
-#include "tasksGroupMap.h";
+#include "tasksGroup.h"
+#include "tasksGroupMap.h"
+#include "model.h"
+
 
 TaskGroup::TaskGroup(int idtaskgroup, int userid, string nameUs, int createdby) {
 	id_task_group = idtaskgroup;

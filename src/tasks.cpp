@@ -21,3 +21,7 @@ void Task::approveTask() {
 
 void Task::viewTask(){
 }
+
+void Task::assignTask(){
+
+}

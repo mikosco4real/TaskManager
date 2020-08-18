@@ -3,9 +3,11 @@
 
 void Session::start()
 {
+    std::cout << std::endl;
     if(login()){
-        std::cout << "Authentication is successful" << std::endl;
         active = true;
+        start_time = time(NULL);
+        std::cout << "You are now logged in as " << user.username << std::endl;
     }
     else{
         std::cout << "Username or password is incorrect" << std::endl;
@@ -15,13 +17,15 @@ void Session::start()
 
 void Session::end()
 {
-    std::cout << time(&start_time) << std::endl;
+    user = User();
+    active = false;
+    std::cout << "You have been logged out successfully" << std::endl;
 }
 
 
 bool Session::status()
 {
-    std::cout << time(&start_time) << std::endl;
+    return active;
 }
 
 
@@ -40,6 +44,10 @@ bool Session::login()
     auto user_it = std::find_if(all.begin(), all.end(), [username, password] (User obj){
         return obj.username == username && obj.password == password;
     });
+
+    if (user_it != all.end()){
+        user = *user_it;
+    }
 
     return user_it != all.end();
 }
@@ -130,7 +138,7 @@ void Views::createTaskGroup(){
 }
 
 void Views::addUser(){
-    taskgroup.addUser();
+    taskgroup.addUser(1); // Takes a Parameter Task Group ID TODO:: get the id from the user but first show them possible task groups. I will put 1 for now.
 }
 
 void Views::createTask(){
@@ -154,7 +162,7 @@ void Views::leaveGroup(){
 }
 
 void Views:: getUserInfo(){
-    //user.getUserInfo(); returns user information
+    user.getUserInfo(2); // You have to include a search type which could be 1 or 2?
 }
 
 void Views::getGroups(){
